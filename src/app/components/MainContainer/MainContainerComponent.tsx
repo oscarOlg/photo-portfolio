@@ -1,9 +1,10 @@
 import React from "react";
+import { MasonryComponent } from "./Masonry/MasonryComponent";
 
 export const MainContainerComponent = () => {
   return (
-    <main className="grow bg-stone-800 bg-opacity-80 h-full max-w-[900px] w-11/12 p-2 sm:p-4 my-6 text-teal-500">
-      <p>text</p>
+    <main className="w-[95vw] mt-[80px] mb-5 bg-stone-950 rounded-xl overflow-y-auto md:overflow-y-scroll">
+      <MasonryComponent />
     </main>
   );
 };

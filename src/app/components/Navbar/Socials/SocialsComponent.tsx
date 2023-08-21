@@ -5,22 +5,26 @@ import React from "react";
 const socials = [
   {
     name: "Facebook",
-    size: 28,
+    width: 28,
+    height: 35,
     url: "https://www.facebook.com/profile.php?id=100088045982178",
   },
   {
     name: "Instagram",
-    size: 25,
+    width: 25,
+    height: 25,
     url: "https://www.instagram.com/oscar.olg.photo/",
   },
   {
     name: "WhatsApp",
-    size: 25,
+    width: 25,
+    height: 25.13,
     url: "whatsapp://send?phone=+526566956875",
   },
   {
     name: "Email",
-    size: 30,
+    width: 30,
+    height: 30,
     url: "mailto:oscar.olg.photo@gmail.com",
   },
 ];
@@ -38,8 +42,8 @@ export const SocialsComponent = () => {
           <Image
             src={`/svg/${app.name}.svg`}
             alt={`${app.name} link`}
-            width={app.size}
-            height={app.size}
+            width={app.width}
+            height={app.height}
           />
         </Link>
       ))}
