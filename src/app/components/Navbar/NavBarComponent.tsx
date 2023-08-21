@@ -5,22 +5,20 @@ import { SocialsComponent } from "./Socials/SocialsComponent";
 import { TabsComponent } from "./Tabs/TabsComponent";
 import useMobileView from "@/app/hooks/useMobileView";
 import Link from "next/link";
+import logo from "../../../../public/images/logo-no-background.png";
 
 export const NavBarComponent = () => {
   const isMobile = useMobileView();
+
+  const getLogo = (width: number) => (
+    <Image src={logo} alt="oscar olg logo" width={width} />
+  );
 
   const getMobileNavBar = () => {
     if (isMobile) {
       return (
         <>
-          <Link href="/">
-            <Image
-              src="/images/logo-no-background.png"
-              alt="oscar olg logo"
-              width={125}
-              height={42.47}
-            />
-          </Link>
+          <Link href="/">{getLogo(125)}</Link>
           <button>
             <Image src="/svg/Menu.svg" alt="Menu Icon" width={30} height={30} />
           </button>
@@ -29,14 +27,7 @@ export const NavBarComponent = () => {
     } else {
       return (
         <>
-          <Link href="/">
-            <Image
-              src="/images/logo-no-background.png"
-              alt="oscar olg logo"
-              width={150}
-              height={51.17}
-            />
-          </Link>
+          <Link href="/">{getLogo(150)}</Link>
           <TabsComponent />
           <SocialsComponent />
         </>
