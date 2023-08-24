@@ -1,20 +1,11 @@
 "use client";
 import useMobileView from "@/app/hooks/useMobileView";
 import Image from "next/image";
-import React, { useRef } from "react";
+import React, { useState } from "react";
 import Masonry from "react-masonry-css";
 
-import type { LightGallery } from "lightgallery/lightgallery";
-import LightGalleryComponent from "lightgallery/react";
-
-// import styles
-import "lightgallery/css/lightgallery.css";
-import "lightgallery/css/lg-zoom.css";
-import "lightgallery/css/lg-thumbnail.css";
-
-// import plugins if you need
-import lgThumbnail from "lightgallery/plugins/thumbnail";
-import lgZoom from "lightgallery/plugins/zoom";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
 
 import DSC_2437 from "../../../../../public/images/TestImages/DSC_2437.jpg";
 import DSC_2715 from "../../../../../public/images/TestImages/DSC_2715.jpg";
@@ -38,9 +29,10 @@ const images = [
   DSC_2489,
 ];
 
-export const MasonryComponent = () => {
+export const MasonryComponent = ({ data }: any) => {
   const isMobile = useMobileView();
-  const lightBoxRef = useRef<LightGallery | null>(null);
+  const [open, setOpen] = useState(false);
+  const [imageIdx, setImageIdx] = useState(0);
 
   return (
     <div className="max-w-[1200px] w-11/12 p-2 sm:p-4 my-5 mx-auto">
@@ -52,28 +44,28 @@ export const MasonryComponent = () => {
         {images.map((img, idx) => (
           <Image
             key={img.src}
-            src={img}
-            alt="photo"
+            src={img.src}
+            alt={img.src}
+            width={0}
+            height={0}
+            sizes="100vw"
+            style={{ width: "100%", height: "auto" }}
             className="my-2 hover:opacity-90 cursor-pointer"
             placeholder="blur"
+            blurDataURL={img.src}
             onClick={() => {
-              lightBoxRef.current?.openGallery(idx);
+              setImageIdx(idx);
+              setOpen(true);
             }}
           />
         ))}
       </Masonry>
-      <LightGalleryComponent
-        onInit={(ref) => {
-          if (ref) {
-            lightBoxRef.current = ref.instance;
-          }
-        }}
-        speed={500}
-        plugins={[lgThumbnail, lgZoom]}
-        dynamic
-        dynamicEl={images.map((image) => ({
+      <Lightbox
+        open={open}
+        index={imageIdx}
+        close={() => setOpen(false)}
+        slides={images.map((image) => ({
           src: image.src,
-          thumb: image.src,
         }))}
       />
     </div>
