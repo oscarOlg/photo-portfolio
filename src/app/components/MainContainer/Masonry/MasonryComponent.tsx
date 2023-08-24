@@ -41,11 +41,11 @@ export const MasonryComponent = ({ data }: any) => {
         className="flex gap-2"
         columnClassName=""
       >
-        {images.map((img, idx) => (
+        {data.map((img: any, idx: number) => (
           <Image
             key={img.src}
             src={img.src}
-            alt={img.src}
+            alt={img.name}
             width={0}
             height={0}
             sizes="100vw"
@@ -64,7 +64,7 @@ export const MasonryComponent = ({ data }: any) => {
         open={open}
         index={imageIdx}
         close={() => setOpen(false)}
-        slides={images.map((image) => ({
+        slides={data.map((image: any) => ({
           src: image.src,
         }))}
       />
