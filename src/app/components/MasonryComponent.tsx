@@ -1,6 +1,6 @@
 "use client";
 import useMobileView from "@/app/hooks/useMobileView";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import React, { useState } from "react";
 import Masonry from "react-masonry-css";
 
@@ -8,7 +8,7 @@ import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 
 type MasonryComponentPorops = {
-  images: { src: string; name: string }[];
+  images: { src: string; name: string }[] | StaticImageData[];
 };
 
 export const MasonryComponent = ({ images }: MasonryComponentPorops) => {
@@ -27,7 +27,7 @@ export const MasonryComponent = ({ images }: MasonryComponentPorops) => {
           <Image
             key={img.src}
             src={img.src}
-            alt={img.name}
+            alt={img.src}
             width={0}
             height={0}
             sizes="100vw"

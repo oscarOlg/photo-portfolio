@@ -33,7 +33,7 @@ export const SocialsComponent = () => {
     <div className="text-base flex gap-3 items-center">
       {socials.map((app) => (
         <Link
-          className="transition rounded-xl opacity-60 hover:opacity-100 ml-3"
+          className="transition  rounded-xl opacity-60 hover:opacity-100 ml-3"
           target="_blank"
           href={app.url}
           key={app.name}
