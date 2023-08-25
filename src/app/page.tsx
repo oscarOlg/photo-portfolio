@@ -1,11 +1,7 @@
-import { NavBarComponent } from "./components/Navbar/NavBarComponent";
-import { MainContainerComponent } from "./components/MainContainer/MainContainerComponent";
+import { MainLayoutComponent } from "./components/MainLayoutComponent";
 
-export default function Home() {
-  return (
-    <div className="h-full w-full flex flex-col items-center">
-      <NavBarComponent />
-      <MainContainerComponent />
-    </div>
-  );
-}
+const Home = () => {
+  return <MainLayoutComponent></MainLayoutComponent>;
+};
+
+export default Home;
