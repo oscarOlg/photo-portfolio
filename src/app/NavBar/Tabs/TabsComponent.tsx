@@ -13,11 +13,11 @@ type TabsComponentProps = {
 };
 
 export const TabsComponent = ({ isMobile }: TabsComponentProps) => {
-  const mobileClassNames = "gap-2 flex-col";
+  const mobileClassNames = "gap-2 flex-col ";
   const desktopClassNames = "gap-1";
   return (
     <div
-      className={`flex justify-between text-stone-700 ${
+      className={`flex justify-end text-stone-700 ${
         isMobile ? mobileClassNames : desktopClassNames
       }`}
     >

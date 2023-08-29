@@ -19,7 +19,12 @@ export const MobileContainer = () => {
           <Image src={logo} alt="oscar olg logo" width={125} />
         </Link>
         <button onClick={() => handleShowMenu()}>
-          <Image src="/svg/Menu.svg" alt="Menu Icon" width={30} height={30} />
+          <Image
+            src={`/svg/${openMenu ? "Close.svg" : "Menu.svg"}`}
+            alt="Menu Icon"
+            width={30}
+            height={30}
+          />
         </button>
       </div>
       {openMenu && <DropDownMenu />}

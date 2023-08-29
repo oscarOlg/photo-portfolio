@@ -4,7 +4,7 @@ import { MobileContainer } from "./MobileContainer";
 
 export const NavBarComponent = () => {
   return (
-    <header className="fixed top-0 w-[95vw] mx-auto px-8 h-[80px]">
+    <header className="fixed top-0 w-[95vw] mx-auto px-5 md:px-8 h-[80px]">
       <div className="hidden md:contents">
         <DesktopContainer />
       </div>
