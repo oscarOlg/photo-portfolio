@@ -4,9 +4,9 @@ import { SocialsComponent } from "../Socials/SocialsComponent";
 
 export const DropDownMenu = () => {
   return (
-    <div className="h-full w-screen fixed top-0 left-0 z-10 from-stone-100 from-40% bg-gradient-to-b animate-in fade-in duration-300">
+    <div className="h-full w-screen fixed top-0 left-0 z-40 from-stone-100 from-40% bg-gradient-to-b animate-in fade-in duration-300">
       <div className="w-[95vw] m-auto h-full mt-[80px] mb-5 flex flex-col gap-3 items-center">
-        <TabsComponent isMobile={true} />
+        <TabsComponent />
         <SocialsComponent />
       </div>
     </div>

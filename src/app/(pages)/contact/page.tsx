@@ -4,7 +4,7 @@ import { MainLayoutComponent } from "@/app/components/MainLayoutComponent";
 const ContactPage = () => {
   return (
     <MainLayoutComponent>
-      <div>ContactPage</div>;
+      <div>ContactPage</div>
     </MainLayoutComponent>
   );
 };

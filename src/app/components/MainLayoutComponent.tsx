@@ -1,10 +1,15 @@
-import React, { PropsWithChildren } from "react";
+import React from "react";
 import { NavBarComponent } from "../NavBar/NavBarComponent";
+import { MainLayoutComponentProps } from "./types";
 
-export const MainLayoutComponent = ({ children }: PropsWithChildren) => {
+export const MainLayoutComponent = ({
+  children,
+  className,
+  navbarClassName,
+}: MainLayoutComponentProps) => {
   return (
-    <div className="h-full w-full flex flex-col items-center">
-      <NavBarComponent />
+    <div className={`h-full w-full flex flex-col items-center ${className}`}>
+      <NavBarComponent className={navbarClassName} />
       {children}
     </div>
   );

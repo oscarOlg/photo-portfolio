@@ -4,7 +4,7 @@ import React from "react";
 const AboutPage = () => {
   return (
     <MainLayoutComponent>
-      <div>AboutPage</div>;
+      <div>AboutPage</div>
     </MainLayoutComponent>
   );
 };
