@@ -1,19 +1,15 @@
 import React from "react";
 import { DesktopContainer } from "./DesktopContainer";
 import { MobileContainer } from "./MobileContainer";
-import type { NavBarComponentProps } from "./types";
+import type { ClassNameProps } from "./types";
 
-export const NavBarComponent = ({ className }: NavBarComponentProps) => {
+export const NavBarComponent = ({ className }: ClassNameProps) => {
   return (
     <header
-      className={`fixed top-0 w-full mx-auto px-5 md:px-10 h-[100px] ${className}`}
+      className={`fixed top-0 w-full px-5 md:px-10 h-[100px] flex center-items ${className}`}
     >
-      <div className="hidden md:contents">
-        <DesktopContainer />
-      </div>
-      <div className="contents md:hidden">
-        <MobileContainer />
-      </div>
+      <DesktopContainer className="hidden md:contents" />
+      <MobileContainer className="contents md:hidden" />
     </header>
   );
 };

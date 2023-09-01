@@ -1,3 +1,3 @@
-export type NavBarComponentProps = {
+export type ClassNameProps = {
   className?: string;
 };

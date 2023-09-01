@@ -30,10 +30,10 @@ const socials = [
 
 export const SocialsComponent = () => {
   return (
-    <div className="text-base flex gap-3 items-center">
+    <div className="flex gap-4 items-center max-w-[100px] md:max-w-[120px]">
       {socials.map((app) => (
         <Link
-          className="transition  rounded-xl opacity-60 hover:opacity-100 ml-3"
+          className="transition rounded-xl opacity-60 hover:opacity-100"
           target="_blank"
           href={app.url}
           key={app.name}

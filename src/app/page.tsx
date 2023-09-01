@@ -30,7 +30,7 @@ const Home = () => {
   };
 
   return (
-    <MainLayoutComponent navbarClassName="z-30 from-stone-100 from-30% bg-gradient-to-b">
+    <MainLayoutComponent navbarClassName="z-30 bg-stone-100 opacity-90">
       <div className="md:mt-[200px] mt-[100px] h-full">
         <div className="grid md:grid-cols-3 grid-cols-1 md:w-11/12 w-10/12 gap-4 animate-in fade-in duration-300 mx-auto">
           {renderImage(portraits, "portraits")}
