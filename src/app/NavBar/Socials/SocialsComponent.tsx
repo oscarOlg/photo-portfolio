@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ClassNameProps } from "../types";
 
 const socials = [
   {
@@ -28,9 +29,11 @@ const socials = [
   },
 ];
 
-export const SocialsComponent = () => {
+export const SocialsComponent = ({ className }: ClassNameProps) => {
   return (
-    <div className="flex gap-4 items-center max-w-[100px] md:max-w-[120px]">
+    <div
+      className={`flex gap-4 items-center max-w-[115px] md:max-w-[120px] ${className}`}
+    >
       {socials.map((app) => (
         <Link
           className="transition rounded-xl opacity-60 hover:opacity-100"

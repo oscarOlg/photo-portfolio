@@ -12,6 +12,7 @@ import image8 from "../../../public/images/home/DSCF0272.jpg";
 import image9 from "../../../public/images/home/DSCF0291.jpg";
 import image10 from "../../../public/images/home/DSCF0296.jpg";
 import image11 from "../../../public/images/home/DSCF0352.jpg";
+import { ClassNameProps } from "../NavBar/types";
 
 const slides = [
   image11,
@@ -26,7 +27,7 @@ const slides = [
   image1,
 ];
 
-export const CarouselComponent = () => {
+export const CarouselComponent = ({ className }: ClassNameProps) => {
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
 
@@ -36,7 +37,7 @@ export const CarouselComponent = () => {
     setIndex(current);
 
   return (
-    <div>
+    <div className={className}>
       <Lightbox
         index={index}
         slides={slides}
@@ -48,14 +49,23 @@ export const CarouselComponent = () => {
         carousel={{
           padding: 0,
           spacing: 0,
-          imageFit: "cover",
+          imageFit: "contain",
         }}
         inline={{
           style: {
-            width: "70%",
-            maxWidth: "900px",
+            width: "90%",
+            maxWidth: "1200px",
             aspectRatio: "3 / 2",
             margin: "0 auto",
+          },
+        }}
+        styles={{
+          container: {
+            backgroundColor: "#e7e5e4",
+            borderRadius: "0.5rem",
+          },
+          icon: {
+            fontSize: "20px",
           },
         }}
       />

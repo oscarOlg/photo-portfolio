@@ -20,7 +20,7 @@ export const MasonryComponent = ({
     <div className={className}>
       <Masonry
         breakpointCols={isMobile ? 1 : 3}
-        className="flex gap-2"
+        className="flex gap-2 z-10"
         columnClassName=""
       >
         {images.map((img, idx) => (
@@ -32,7 +32,7 @@ export const MasonryComponent = ({
             height={0}
             sizes="100vw"
             style={{ width: "100%", height: "auto" }}
-            className="my-3 hover:opacity-90 cursor-pointer"
+            className="my-3 cursor-pointer"
             placeholder="blur"
             blurDataURL={img.src}
             onClick={() => {
